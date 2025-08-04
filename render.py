@@ -177,7 +177,7 @@ def render_sets(dataset : ModelParams, pipeline : PipelineParams,  render_params
         background = torch.tensor(bg_color, dtype=torch.float32, device="cuda")
 
         if render_params.render_video:
-            render_video_func_wriva(dataset.source_path, dataset.model_path, scene.loaded_iter, scene.getTrainCameras(),
+            render_video_func(dataset.source_path, dataset.model_path, scene.loaded_iter, scene.getTrainCameras(),
                          gaussians, pipeline, background, classifier, args.fps)
 
         if not render_params.skip_train:
